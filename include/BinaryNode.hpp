@@ -28,11 +28,11 @@ public:
 
     // getter/setter
     T getElement() const { return element; }
-    void setElement(T element){element = element};
+    void setElement(T element) { this->element = element; }
 
-    BinaryNode<T> getLeft() const { return left; }
-    set setLeft() const { this->left = left; }
+    BinaryNode<T> *getLeft() const { return left; }
+    void setLeft(BinaryNode<T> *left) { this->left = left; }
 
-    BinaryNode<T> getRight() const { return left; }
-    set setRight() const { this->right = right; }
+    BinaryNode<T> *getRight() const { return right; }
+    void setRight(BinaryNode<T> *right) { this->right = right; }
 };
