@@ -90,6 +90,7 @@ public:
     // altura
     int height(BinaryNode<T> *node) const
     {
+        // root = nullptr; readOnly Object, error común...
         if (node == nullptr)
             return 0;
 
@@ -98,4 +99,29 @@ public:
 
         return 1 + std::max(leftHeight, rightHeight);
     }
+
+    int depth(const T &element) const
+    {
+        return depth(root, element, 0);
+    }
+
+    // altura de un node en un árbol binario...
+    int depth(BinaryNode<T> *node, const T &element, int currentDepth) const
+    {
+        if (node == nullptr)
+            return -1; // Elemento no encontrado en el árbol
+
+        if (element == node->getElement())
+            return currentDepth;
+
+        int leftDepth = depth(node->getLeft(), element, currentDepth + 1);
+        if (leftDepth != -1)
+            return leftDepth;
+
+        int rightDepth = depth(node->getRight(), element, currentDepth + 1);
+        return rightDepth;
+    }
 };
+
+//      2
+// 1         3

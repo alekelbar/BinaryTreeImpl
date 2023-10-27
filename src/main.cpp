@@ -12,7 +12,7 @@ int main()
     tree.add(3); // Agregar 3
 
     // std::cout << tree.getRoot()->getElement() << std::endl;
-    std::cout << tree.height(tree.getRoot()) << std::endl;
+    std::cout << tree.depth(4) << std::endl;
 
     return 0;
 }
