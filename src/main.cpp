@@ -12,12 +12,7 @@ int main()
     tree.add(3); // Agregar 3
 
     // std::cout << tree.getRoot()->getElement() << std::endl;
-    tree.inOrder(tree.getRoot());
-    std::cout << std::endl;
-    tree.postOrder(tree.getRoot());
-    std::cout << std::endl;
-    tree.preOrder(tree.getRoot());
-    std::cout << std::endl;
+    std::cout << tree.height(tree.getRoot()) << std::endl;
 
     return 0;
 }

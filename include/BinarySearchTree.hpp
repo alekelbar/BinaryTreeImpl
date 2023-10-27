@@ -86,4 +86,16 @@ public:
         std::cout << node->getElement() << " / ";
         preOrder(node->getRight());
     }
+
+    // altura
+    int height(BinaryNode<T> *node) const
+    {
+        if (node == nullptr)
+            return 0;
+
+        int leftHeight = height(node->getLeft());
+        int rightHeight = height(node->getRight());
+
+        return 1 + std::max(leftHeight, rightHeight);
+    }
 };
